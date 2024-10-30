@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário e Tabela</title>
+</head>
+<body>
+    <h1>Formulário de Nome e Leitura</h1>
+    
+    <form action="/submit_form" method="post">
+        <label for="name">Digite seu nome:</label>
+        <input type="text" id="food_name" name="name" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Tabela de Nomes e Leituras</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Leitura</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Percorre os dados no dicionário e exibe cada item na tabela -->
+            {% for entry in data_table %}
+            <tr>
+                <td>{{ entry.food_name }}</td>
+                <td>{{ entry.reading }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
